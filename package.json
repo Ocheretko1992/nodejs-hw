@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocheretko1992/nodejs-hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Ocheretko1992/nodejs-hw/issues"
+  },
+  "homepage": "https://github.com/Ocheretko1992/nodejs-hw#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.0.0"
+  }
+}
