@@ -1,14 +1,14 @@
 import express from 'express';
 import 'dotenv/config';
 import cors from 'cors';
-import { pinoHttp } from 'pino-http';
+import pino from 'pino-http';
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 app.use(
-  pinoHttp({
+  pino({
     level: 'info',
     transport: {
       target: 'pino-pretty',
