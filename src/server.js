@@ -29,14 +29,14 @@ app.get('/notes', (req, res) => {
     message: 'Retrieved all notes',
   });
 });
-app.get('/notes:noteId', (req, res) => {
-  const {id}= req.params;
+
+app.get('/notes/:noteId', (req, res) => {
+  const { noteId } = req.params;
+
   res.status(200).json({
-    message: `Retrieved note with ID:${id}`,
+    message: `Retrieved note with ID:${noteId}`,
   });
 });
-
-
 
 app.get('/test-error', () => {
   throw new Error('Simulated server error');
