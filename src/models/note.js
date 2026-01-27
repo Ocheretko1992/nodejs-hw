@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import TAGS from '../constants/tags.js';
+import { TAGS } from '../constants/tags.js';
+
 
 const noteSchema = mongoose.Schema(
   {
