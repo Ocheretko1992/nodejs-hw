@@ -14,7 +14,7 @@ export const createSession = async (userId) => {
     refreshTokenValidUntil: new Date(Date.now() + ONE_DAY),
   });
 };
-export const setSessionCookies = async (res, session) => {
+export const setSessionCookies = (res, session) => {
   res.cookie('accessToken', session.accessToken, {
     httpOnly: true,
     secure: true,
