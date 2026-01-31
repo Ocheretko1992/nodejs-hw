@@ -1,6 +1,5 @@
 import { mongoose, Schema } from 'mongoose';
 import { TAGS } from '../constants/tags.js';
-import { User } from './user.js';
 
 const noteSchema = mongoose.Schema(
   {
@@ -21,7 +20,7 @@ const noteSchema = mongoose.Schema(
     },
     userId: {
       type: Schema.Types.ObjectId,
-      ref: User,
+      ref: 'User',
       required: true,
     },
   },
