@@ -15,7 +15,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      min: 8,
+      minlength: 8,
     },
   },
   { timestamps: true },
@@ -25,7 +25,6 @@ userSchema.pre('save', function () {
   if (!this.username) {
     this.username = this.email;
   }
-
 });
 
 userSchema.methods.toJSON = function () {
