@@ -123,7 +123,7 @@ export const requestResetEmail = async (req, res) => {
   );
 
   const templatesPath = path.resolve(
-    '/src/templates/reset-password-email.html',
+    './src/templates/reset-password-email.html',
   );
   const templateSource = await fs.readFile(templatesPath, 'utf-8');
   const template = handlebars.compile(templateSource);
