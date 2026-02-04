@@ -122,7 +122,9 @@ export const requestResetEmail = async (req, res) => {
     { expiresIn: '15m' },
   );
 
-  const templatesPath = path.resolve('src/templates/reset-password-email.html');
+  const templatesPath = path.resolve(
+    '/src/templates/reset-password-email.html',
+  );
   const templateSource = await fs.readFile(templatesPath, 'utf-8');
   const template = handlebars.compile(templateSource);
 
@@ -138,7 +140,8 @@ export const requestResetEmail = async (req, res) => {
       subject: 'Reset your password',
       html,
     });
-  } catch {
+  } catch (err) {
+    console.error('Email sending error:', err);
     throw createHttpError(
       500,
       'Failed to send the email, please try again later.',
