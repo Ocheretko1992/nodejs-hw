@@ -107,6 +107,12 @@ export const requestResetEmail = async (req, res) => {
 
   const userEmail = await User.findOne({ email });
 
+  if (!userEmail) {
+    return res.status(200).json({
+      message: 'Password reset email sent successfully',
+    });
+  }
+
   const resetToken = jwt.sign(
     {
       sub: userEmail._id,
@@ -115,12 +121,6 @@ export const requestResetEmail = async (req, res) => {
     process.env.JWT_SECRET,
     { expiresIn: '15m' },
   );
-
-  if (!userEmail) {
-    return res.status(200).json({
-      message: 'Password reset email sent successfully',
-    });
-  }
 
   const templatesPath = path.resolve('src/templates/reset-password-email.html');
   const templateSource = await fs.readFile(templatesPath, 'utf-8');
